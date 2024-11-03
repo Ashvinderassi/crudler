@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View } from "react-native";
 
-const Screen = ({children}) => {
+const Screen = ({ children }) => {
   // Initialsations -------------------
   // State ----------------------------
   // Handlers -------------------------
@@ -9,17 +9,16 @@ const Screen = ({children}) => {
   return (
     <View style={styles.screen}>
       {children}
-      <StatusBar style='light' />
+      <StatusBar style="light" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-    screen: {
+  screen: {
+    padding: 15,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });
 
