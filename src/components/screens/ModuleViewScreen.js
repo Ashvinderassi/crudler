@@ -4,14 +4,20 @@ import ModuleView from "../entity/modules/moduleView";
 
 export const ModuleViewScreen = ({ navigation, route }) => {
   // Initialsations -------------------
-  const { module } = route.params;
+  const { module, onDelete, onModify } = route.params;
 
   // State ----------------------------
   // Handlers -------------------------
+  const gotoModifyScreen = () =>
+    navigation.navigate("ModuleModifyScreen", { module, onModify });
   // View -----------------------------
   return (
     <Screen>
-      <ModuleView module={module} />
+      <ModuleView
+        module={module}
+        onDelete={onDelete}
+        onModify={gotoModifyScreen}
+      />
     </Screen>
   );
 };
