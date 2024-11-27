@@ -15,6 +15,7 @@ const ModuleItem = ({ module, onSelect }) => {
     </Pressable>
   );
 };
+
 const styles = StyleSheet.create({
   item: {
     paddingVertical: 15,

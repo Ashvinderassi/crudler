@@ -18,7 +18,7 @@ export const ButtonTray = ({ children }) => {
   // State -------------------------------
   // Handlers ----------------------------
   // View --------------------------------
-  return <View style={styles.buttonTray}>{children}</View>;
+  return <View style={styles.ButtonTray}>{children}</View>;
 };
 
 const styles = StyleSheet.create({
