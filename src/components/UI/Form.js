@@ -19,12 +19,12 @@ const Form = ({ children, onSubmit, onCancel, submitLabel, submitIcon }) => {
     <KeyboardAvoidingView style={styles.formContainer}>
       <ScrollView contentContainerStyle={styles.formItems}>
         {children}
-      </ScrollView>
 
-      <ButtonTray>
-        <Button label={submitLabel} icon={submitIcon} onClick={onSubmit} />
-        <Button label="Cancel" icon={<Icons.Close />} onClick={onCancel} />
-      </ButtonTray>
+        <ButtonTray>
+          <Button label={submitLabel} icon={submitIcon} onClick={onSubmit} />
+          <Button label="Cancel" icon={<Icons.Close />} onClick={onCancel} />
+        </ButtonTray>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };
