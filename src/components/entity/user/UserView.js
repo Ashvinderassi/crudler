@@ -1,38 +1,37 @@
 import { Alert, StyleSheet, Text, View } from "react-native";
 import FullWidthImage from "react-native-fullwidth-image";
 import Icons from "../../UI/Icons.js";
-import { Button, ButtonTray } from "../../UI/Button";
+import { Button, ButtonTray } from "../../UI/Button.js";
 
-const ModuleView = ({ module, onDelete, onModify }) => {
+const UserView = ({ user, onDelete, onModify }) => {
   // Initialisations ---------------------
   // State -------------------------------
   // Handlers ----------------------------
-  const handleDelete = () => onDelete(module);
+  const handleDelete = () => onDelete(user);
 
   const requestDelete = () =>
     Alert.alert(
       "Delete warning",
-      `Are you sure that you want to delete module ${module.ModuleCode} ${module.ModuleName} `,
+      `Are you sure that you want to delete user ${user.UserFirstname} ${user.UserLastname} `,
       [{ text: "Cancel" }, { text: "Delete", onPress: handleDelete }]
     );
   // View --------------------------------
   return (
     <View style={styles.container}>
       <FullWidthImage
-        source={{ uri: module.ModuleImageURL }}
+        source={{ uri: user.UserImageURL }}
         style={styles.image}
       />
 
       <View style={styles.infoTray}>
-        <Text style={styles.boldText}>
-          {module.ModuleCode} {module.ModuleName}
-        </Text>
-        <Text style={styles.text}>Level {module.ModuleLevel}</Text>
-        <Text style={styles.text}> Cohort {module.ModuleYearName}</Text>
+        <Text style={styles.boldText}>{user.UserID}</Text>
         <Text style={styles.text}>
-          {module.ModuleLeaderName}{" "}
-          <Text style={styles.dimText}>(Module Leader)</Text>
+          {user.UserFirstname} {user.UserLastname}
+          <Text style={styles.dimText}> ({user.UserUsertypeName})</Text>
         </Text>
+        <Text style={styles.text}>Level {user.UserLevel}</Text>
+        <Text style={styles.text}>Cohort {user.UserYearName}</Text>
+        <Text style={styles.text}> </Text>
       </View>
       <ButtonTray>
         <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
@@ -66,4 +65,4 @@ const styles = StyleSheet.create({
     color: "grey",
   },
 });
-export default ModuleView;
+export default UserView;
