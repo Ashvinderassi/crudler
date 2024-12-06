@@ -60,9 +60,12 @@ export const UserListScreen = ({ navigation }) => {
         <Button label="Add User" icon={<Icons.Add />} onClick={gotoAddScreen} />
       </ButtonTray>
       {isLoading && (
-        <View style={styles.spinner}>
-          <Text>Retrieving records from {usersEndpoint} ...</Text>
+        <View>
+          <Text style={styles.loading}>
+            Retrieving records from {usersEndpoint}...{" "}
+          </Text>
           <ActivityIndicator size="large" />
+          <UserList users={users} onSelect={gotoViewScreen} />
         </View>
       )}
       <UserList users={users} onSelect={gotoViewScreen} />
