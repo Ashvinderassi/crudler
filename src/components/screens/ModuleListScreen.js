@@ -57,20 +57,17 @@ export const ModuleListScreen = ({ navigation }) => {
   // View -----------------------------
   return (
     <Screen>
-      <ButtonTray>
-        <Button
-          label="Add Module"
-          icon={<Icons.Add />}
-          onClick={gotoAddScreen}
-        />
-      </ButtonTray>
-      {isLoading && (
-        <View style={styles.spinner}>
-          <Text>Retrieving records from {modulesEndpoint} ...</Text>
-          <ActivityIndicator size="large" />
-        </View>
-      )}
-      <ModuleList modules={modules} onSelect={gotoViewScreen} />
+      <View style={styles.container}>
+        <ButtonTray>
+          <Button
+            label="Add Module"
+            icon={<Icons.Add />}
+            onClick={gotoAddScreen}
+          />
+        </ButtonTray>
+        {isLoading && <Text style={styles.spinner}>Loading... </Text>}
+        <ModuleList modules={modules} onSelect={gotoViewScreen} />
+      </View>
     </Screen>
   );
 };
